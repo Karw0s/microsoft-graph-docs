@@ -301,6 +301,23 @@ POST https://graph.microsoft.com/v1.0/me/messages/AAMkAGE1M2IyNGNmLTI5MTktNDUyZi
 [!INCLUDE [sample-code](../includes/snippets/csharp/post-opentypeextension-2-csharp-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
+# [Java](#tab/java)
+```java
+Extension extension = new OpenTypeExtension();
+extension.oDataType = "microsoft.graph.openTypeExtension";
+extension.extensionName = "Com.Contoso.Referral";
+extension.additionalDataManager().putAll(
+    Map.of("companyName" : new JsonPrimitive("Wingtip Toys"),
+        "dealValue" : new JsonPrimitive(500050),
+        "expirationDate" : new JsonPrimitive("2015-12-03T10:00:00.000Z"))
+);
+
+graphClient.me()
+  .messages("{id}")
+  .extensions()
+  .buildRequest()
+  .post(extension);
+```
 # [JavaScript](#tab/javascript)
 [!INCLUDE [sample-code](../includes/snippets/javascript/post-opentypeextension-2-javascript-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
@@ -377,6 +394,24 @@ POST https://graph.microsoft.com/v1.0/groups/f5480dfd-7d77-4d0b-ba2e-3391953cc74
 # [C#](#tab/csharp)
 [!INCLUDE [sample-code](../includes/snippets/csharp/post-opentypeextension-3-csharp-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+# [Java](#tab/java)
+```java
+Extension extension = new OpenTypeExtension();
+extension.oDataType = "microsoft.graph.openTypeExtension";
+extension.extensionName = "Com.Contoso.Deal";
+extension.additionalDataManager().putAll(
+    Map.of("companyName" : new JsonPrimitive("Alpine Skis"),
+        "dealValue" : new JsonPrimitive(1010100),
+        "expirationDate" : new JsonPrimitive("015-07-03T13:04:00.000Z"))
+);
+
+graphClient.groups("{group-id}")
+  .events("{event-id}")
+  .extensions()
+  .buildRequest()
+  .post(extension);
+```
 
 # [JavaScript](#tab/javascript)
 [!INCLUDE [sample-code](../includes/snippets/javascript/post-opentypeextension-3-javascript-snippets.md)]
