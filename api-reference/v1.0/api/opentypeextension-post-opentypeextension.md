@@ -307,9 +307,9 @@ Extension extension = new OpenTypeExtension();
 extension.oDataType = "microsoft.graph.openTypeExtension";
 extension.extensionName = "Com.Contoso.Referral";
 extension.additionalDataManager().putAll(
-    Map.of("companyName" : new JsonPrimitive("Wingtip Toys"),
-        "dealValue" : new JsonPrimitive(500050),
-        "expirationDate" : new JsonPrimitive("2015-12-03T10:00:00.000Z"))
+    Map.of("companyName", new JsonPrimitive("Wingtip Toys"),
+        "dealValue", new JsonPrimitive(500050),
+        "expirationDate", new JsonPrimitive("2015-12-03T10:00:00.000Z"))
 );
 
 graphClient.me()
@@ -401,9 +401,9 @@ Extension extension = new OpenTypeExtension();
 extension.oDataType = "microsoft.graph.openTypeExtension";
 extension.extensionName = "Com.Contoso.Deal";
 extension.additionalDataManager().putAll(
-    Map.of("companyName" : new JsonPrimitive("Alpine Skis"),
-        "dealValue" : new JsonPrimitive(1010100),
-        "expirationDate" : new JsonPrimitive("015-07-03T13:04:00.000Z"))
+    Map.of("companyName", new JsonPrimitive("Alpine Skis"),
+        "dealValue", new JsonPrimitive(1010100),
+        "expirationDate", new JsonPrimitive("015-07-03T13:04:00.000Z"))
 );
 
 graphClient.groups("{group-id}")
